@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Réservations</title>
+    <link rel="stylesheet" href="css.css">
+    <script defer src="js.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Gestion des Réservations</h1>
+        <select id="themeSwitcher">
+            <option value="clair">Clair</option>
+            <option value="sombre">Sombre</option>
+            <option value="bleu">Bleu</option>
+            <option value="rouge">Rouge</option>
+            <option value="jaune">Jaune</option>
+        </select>
+    </header>
+    
+    <section id="clients">
+        <h2>Gestion des Clients</h2>
+        <input type="text" id="clientName" placeholder="Nom complet">
+        <input type="text" id="clientCIN" placeholder="CIN">
+        <label><input type="checkbox" id="clientStudent"> Étudiant</label>
+        <button onclick="addClient()">Ajouter Client</button>
+        <ul id="clientList"></ul>
+    </section>
+    
+    <section id="reservation">
+        <h2>Nouvelle Réservation</h2>
+        <select id="clientSelect"></select>
+        <select id="destination">
+            <option value="20">Mohammedia</option>
+            <option value="100">Rabat</option>
+            <option value="180">Marrakech</option>
+        </select>
+        <select id="classSelect">
+            <option value="1">2ème classe</option>
+            <option value="1.5">1ère classe</option>
+        </select>
+        <button onclick="calculatePrice()">Calculer Prix</button>
+        <p id="totalPrice"></p>
+        <button onclick="addReservation()">Ajouter Réservation</button>
+    </section>
+    
+    <section id="tickets">
+        <h2>Tickets Réservés</h2>
+        <table border="1" align="center" width="100%">
+            <thead>
+                <tr>
+                    <th>Client</th>
+                    <th>Destination</th>
+                    <th>Classe</th>
+                    <th>Prix</th>
+                </tr>
+            </thead>
+            <tbody id="ticketList"></tbody>
+        </table>
+    </section>
+</body>
+</html>
